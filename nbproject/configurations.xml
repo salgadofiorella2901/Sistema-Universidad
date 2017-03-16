@@ -4,7 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Control.h</itemPath>
       <itemPath>Escuela.h</itemPath>
+      <itemPath>InterfazControl.h</itemPath>
       <itemPath>Librerias.h</itemPath>
       <itemPath>Lista.h</itemPath>
       <itemPath>Menu.h</itemPath>
@@ -18,7 +20,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Control.cpp</itemPath>
       <itemPath>Escuela.cpp</itemPath>
+      <itemPath>InterfazControl.cpp</itemPath>
       <itemPath>Lista.cpp</itemPath>
       <itemPath>Menu.cpp</itemPath>
       <itemPath>Nodo.cpp</itemPath>
@@ -47,9 +51,17 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Control.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Control.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Escuela.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Escuela.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InterfazControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="InterfazControl.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Librerias.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -92,9 +104,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Control.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Control.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Escuela.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Escuela.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InterfazControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="InterfazControl.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Librerias.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -19,6 +19,7 @@ Menu::Menu() {
     d="heredia";
     t="61688613";
     uni=new Universidad(n,d,t);
+    intfz=new InterfazControl();
 }
 
 void Menu::presentacionInicio(){
@@ -28,19 +29,15 @@ void Menu::presentacionInicio(){
 char Menu::opcionInicio(){
     system("cmd /c cls"); 
     char aux= ' ';
-    cout<<"1) Modo administrador"<<endl;
-    cout<<"2) Modo Estudiante"<<endl;
+    intfz->menuPrincipal();
     cin>>aux;
     return aux;
 }
 
 char Menu::modoAdministrativo(){
-    system("cmd /c cls"); 
+    //system("cmd /c cls"); 
     char aux= ' ';
-    cout<<"1) Consultar informacion de contacto de la universidad"<<endl;
-    cout<<"2) Cambiar numero de telefono"<<endl;
-    cout<<"3) cambiar direccion"<<endl;
-    cout<<"4) Atras"<<endl;
+    intfz->menuUniversidad();
     cin>>aux;
     return aux;
 }
@@ -51,30 +48,33 @@ void Menu::switchInicio(){
     aux=opcionInicio();
     
     switch(aux){
-    case '1':modoAdministrativo();
+    case '1':switchModoAdministrativo();
             break;
     case '2':cout<<"aun sin modo estudiante"<<endl;
             break;
+                
     //default:cout<<"no"<<endl;
     }
 }
 
 void Menu::switchModoAdministrativo(){
-    char aux = ' ';
-    aux=modoAdministrativo();
-    
+   char aux = ' ';
+  aux= modoAdministrativo();
+   
     switch(aux){
-    case '1': cout<<uni->toString()<<endl;//llama al toString de la universidad
+    case '1': cout<<uni->toString()<<endl; cin.get();//llama al toString de la universidad
         break;
     case '2': uni->cambiarNumero();
         break;
     case '3': uni->cambiarDireccion();
         break;
-    case '4':switchInicio();
+    case '4':opcionInicio();
         break;
         
-    default:cout<<"no"<<endl;
+   default:cout<<"no"<<endl;
     }
+    cout<<"prueba"<<endl;
+    cin.get();
 }
 
 Menu::~Menu() {

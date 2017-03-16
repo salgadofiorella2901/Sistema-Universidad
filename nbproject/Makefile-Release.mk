@@ -35,7 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Control.o \
 	${OBJECTDIR}/Escuela.o \
+	${OBJECTDIR}/InterfazControl.o \
 	${OBJECTDIR}/Lista.o \
 	${OBJECTDIR}/Menu.o \
 	${OBJECTDIR}/Nodo.o \
@@ -67,10 +69,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyectouniverdad.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyectouniverdad ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Control.o: Control.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Control.o Control.cpp
+
 ${OBJECTDIR}/Escuela.o: Escuela.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Escuela.o Escuela.cpp
+
+${OBJECTDIR}/InterfazControl.o: InterfazControl.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InterfazControl.o InterfazControl.cpp
 
 ${OBJECTDIR}/Lista.o: Lista.cpp
 	${MKDIR} -p ${OBJECTDIR}

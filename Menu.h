@@ -14,6 +14,7 @@
 #ifndef MENU_H
 #define MENU_H
 #include "Universidad.h"
+#include "InterfazControl.h"
 
 class Menu {
 public:
@@ -25,8 +26,10 @@ public:
     void switchInicio();
     void switchModoAdministrativo();
     
+    
 private:
     Universidad * uni;
+    InterfazControl* intfz;
 };
 #endif /* MENU_H */
 

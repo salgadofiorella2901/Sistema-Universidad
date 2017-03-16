@@ -14,10 +14,11 @@
 #ifndef UNIVERSIDAD_H
 #define UNIVERSIDAD_H
 #include"Librerias.h"
+
 class Universidad {
 public:
     Universidad();
-    Universidad(string ,string, string);
+    Universidad(string, string, string);
     virtual ~Universidad();
     void setDireccion(string);
     void setTelefono(string);
