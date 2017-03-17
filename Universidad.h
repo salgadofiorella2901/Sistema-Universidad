@@ -13,12 +13,13 @@
 
 #ifndef UNIVERSIDAD_H
 #define UNIVERSIDAD_H
-#include"Librerias.h"
+#include "Librerias.h"
+#include "Lista.h"
 
 class Universidad {
 public:
     Universidad();
-    Universidad(string, string, string);
+    Universidad(string, string, string, Lista*);
     virtual ~Universidad();
     void setDireccion(string);
     void setTelefono(string);
@@ -31,10 +32,13 @@ public:
     void cosultarEscuela();
     void cambiarNumero();
     void cambiarDireccion();
+    string imprimirTodasEscuelas();
+    Lista* retornaLista();
 private:
     string nombre;
     string direccion;
     string telefono;
+    Lista * lista;
 };
 
 #endif /* UNIVERSIDAD_H */

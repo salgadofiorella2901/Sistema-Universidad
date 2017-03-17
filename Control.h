@@ -16,14 +16,20 @@
 
 #include "Librerias.h"
 #include "Universidad.h"
+#include "Menu.h"
+#include "Lista.h"
 
 class Control {
 public:
     Control();
     virtual ~Control();
     Universidad* retornaU();
+    void empezar(); //se deberia escoger un mejor nombre, por ahora es "empezar"
+    void iniciarlizarListaEscuelas();
 private:
     Universidad* uni;
+    Menu * menu;
+    Lista* ls;
 };
 
 #endif /* CONTROL_H */

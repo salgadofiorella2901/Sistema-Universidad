@@ -17,10 +17,15 @@
 
 class InterfazControl {
 public:
+    /////////////////////////////////
     InterfazControl();
     virtual ~InterfazControl();
     void menuPrincipal();
     void menuUniversidad();
+    void gotoxy(int, int);
+    /////////////////////////////////
+    void menuEscuela();
+    
     
 private:
 

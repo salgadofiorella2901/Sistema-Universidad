@@ -14,16 +14,15 @@
 #include <cstdlib>
 #include "Librerias.h"
 #include "Menu.h"
+#include "Control.h"
 #include <stdio.h>
 #include <stdlib.h>
 using namespace std;
 
 
 int main() {
-    Menu * menu = new Menu();
-    menu->presentacionInicio();
-    menu->switchInicio();
-    //cin.get();
+    Control* ctrl = new Control();
+    ctrl->empezar();
     return 0;
 }
 

@@ -15,14 +15,31 @@
 
 
 Control::Control() {
-    uni=new Universidad("UNA","hEREDIA","61688613");
+    ls = new Lista();
+    uni=new Universidad("UNA","hEREDIA","61688613",ls);
+    menu = new Menu(uni);
+   
 }
 
 Universidad* Control::retornaU(){
     return uni;
 }
 
-
 Control::~Control() {
 }
 
+void Control::empezar(){
+   iniciarlizarListaEscuelas();
+   //cout<<ls->toString()<<endl;
+   menu->presentacionInicio();
+   menu->switchInicio();
+  
+}
+
+void Control::iniciarlizarListaEscuelas(){
+    Escuela* escuela1 = new Escuela("INFORMATICA","LAGUNILLA","61688613","INF01");
+    Escuela* escuela2 = new Escuela("BIOPRECESOS","HEREDIA","61688613","BIOQUI01");
+    ls->insertar(escuela1);
+    ls->insertar(escuela2);
+    
+}

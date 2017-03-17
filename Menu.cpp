@@ -13,17 +13,18 @@
 
 #include "Menu.h"
 
-Menu::Menu() {
-    string n,d,t;
-    n="una";
-    d="heredia";
-    t="61688613";
-    uni=new Universidad(n,d,t);
+Menu::Menu(Universidad *u) {
+    uni=u;
     intfz=new InterfazControl();
 }
 
+Menu::~Menu() {
+}
+
+
 void Menu::presentacionInicio(){
-    cout<<"BIENVENIDO A LA UNIVERSIDAD NACIONAL"<<endl;  
+   intfz->gotoxy(25,25);cout<<"BIENVENIDO A LA UNIVERSIDAD NACIONAL"<<endl;  
+   cin.get();
 }
 
 char Menu::opcionInicio(){
@@ -35,7 +36,7 @@ char Menu::opcionInicio(){
 }
 
 char Menu::modoAdministrativo(){
-    //system("cmd /c cls"); 
+    system("cmd /c cls"); 
     char aux= ' ';
     intfz->menuUniversidad();
     cin>>aux;
@@ -51,14 +52,13 @@ void Menu::switchInicio(){
     case '1':switchModoAdministrativo();
             break;
     case '2':cout<<"aun sin modo estudiante"<<endl;
-            break;
-                
-    //default:cout<<"no"<<endl;
+            break;         
+    default:cout<<"no"<<endl;
     }
 }
 
 void Menu::switchModoAdministrativo(){
-   char aux = ' ';
+  char aux = ' ';
   aux= modoAdministrativo();
    
     switch(aux){
@@ -68,15 +68,39 @@ void Menu::switchModoAdministrativo(){
         break;
     case '3': uni->cambiarDireccion();
         break;
-    case '4':opcionInicio();
+    case '4':switchModoEscuela();
+        break;
+    case '5':opcionInicio();
+        break;
+   default:cout<<"no"<<endl;
+    }
+    cin.get();
+}
+char Menu::modoEscuela(){
+    system("cmd /c cls"); 
+    char aux= ' ';
+    intfz->menuEscuela();
+    cin>>aux;
+    return aux;
+}
+
+void Menu::switchModoEscuela(){
+  char aux = ' ';
+  aux= modoEscuela();
+   
+    switch(aux){
+    case '1': cout<<uni->imprimirTodasEscuelas()<<endl; cin.get(); switchInicio();//llama al toString de Escuela*/ 
+        break;
+    case '2': uni->registrarEscuela();switchInicio();
+        break;
+    case '3': uni->cambiarDireccion();
+        break;
+    case '4':switchInicio();
         break;
         
    default:cout<<"no"<<endl;
     }
-    cout<<"prueba"<<endl;
     cin.get();
 }
 
-Menu::~Menu() {
-}
 

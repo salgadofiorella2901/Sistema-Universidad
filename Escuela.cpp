@@ -12,6 +12,7 @@
  */
 
 #include "Escuela.h"
+#include "Lista.h"
 
 Escuela::Escuela() {
     

@@ -34,9 +34,6 @@ private:
    string direccion;
    string numeroTelef;
    string  codigo;
-   
-    
-
 };
 
 #endif /* ESCUELA_H */

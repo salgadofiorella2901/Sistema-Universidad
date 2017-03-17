@@ -12,22 +12,25 @@
  */
 
 #include "Universidad.h"
+#include "Lista.h"
 
 Universidad::Universidad() {
     nombre = " ";
     direccion = " ";
     telefono = " ";
+    lista=new Lista();
 }
 
 Universidad::~Universidad() {
 }
 
 
-Universidad::Universidad(string nomb,string direcc,string telef)
+Universidad::Universidad(string nomb,string direcc,string telef, Lista* ls)
 {
     this->nombre = nomb;
     this->direccion = direcc;
     this->telefono = telef;
+    lista=ls;
 }    
 void Universidad::setDireccion(string direcc)
 {
@@ -85,6 +88,25 @@ void Universidad::cambiarDireccion(){
     setDireccion(aux);
 }
 
-void Universidad::registrarEscuela(){}
+void Universidad::registrarEscuela(){
+    string nom,dir,tel,cod = "";
+    cout<<"Ingrese nombre de la escuela"<<endl; cin>>nom;
+    cout<<"Ingrese direccion de la escuela"<<endl;cin>>dir;
+    cout<<"Ingrese telefono de la escuela"<<endl;cin>>tel;
+    cout<<"Ingrese codigo de la escuela"<<endl;cin>>cod;
+    Escuela* aux = new Escuela(nom, dir, tel, cod);
+    lista->insertar(aux);
+}
 
-void Universidad::cosultarEscuela(){}
+void Universidad::cosultarEscuela(){
+    
+}
+
+string Universidad::imprimirTodasEscuelas(){
+    return lista->toString();
+}
+
+
+Lista* Universidad::retornaLista(){
+    return lista;
+}

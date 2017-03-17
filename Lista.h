@@ -18,6 +18,7 @@ public:
     virtual ~Lista();
     void insertar(Escuela*);
     string toString();
+    int contador;
 private:
     Nodo* primero;
     Nodo* actual;

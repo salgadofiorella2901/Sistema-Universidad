@@ -18,13 +18,15 @@
 
 class Menu {
 public:
-    Menu();
+    Menu(Universidad* u);
     virtual ~Menu();
     void presentacionInicio();
     char opcionInicio();
     char modoAdministrativo();
     void switchInicio();
     void switchModoAdministrativo();
+    char modoEscuela();
+    void switchModoEscuela();
     
     
 private:
