@@ -23,7 +23,7 @@ Menu::~Menu() {
 
 
 void Menu::presentacionInicio(){
-   intfz->gotoxy(25,25);cout<<"BIENVENIDO A LA UNIVERSIDAD NACIONAL"<<endl;  
+   intfz->presentacion();
    cin.get();
 }
 
@@ -47,14 +47,20 @@ void Menu::switchInicio(){
 
     char aux =' ';
     aux=opcionInicio();
-    
-    switch(aux){
-    case '1':switchModoAdministrativo();
-            break;
-    case '2':cout<<"aun sin modo estudiante"<<endl;
-            break;         
-    default:cout<<"no"<<endl;
+    if (isdigit(aux)!=0){
+        switch(aux){
+        case '1':switchModoAdministrativo();
+                break;
+        case '2':cout<<"aun sin modo estudiante"<<endl;
+                break;    
+         case '3':intfz->salirSeguro();
+                break;      
+        default:cout<<"no"<<endl;
+        }
+    }else{
+            cout<<"DATOS INCORRECTOS"<<endl;
     }
+    this->switchInicio();
 }
 
 void Menu::switchModoAdministrativo(){
@@ -62,15 +68,15 @@ void Menu::switchModoAdministrativo(){
   aux= modoAdministrativo();
    
     switch(aux){
-    case '1': cout<<uni->toString()<<endl; cin.get();//llama al toString de la universidad
+    case '1': cout<<uni->toString()<<endl; cin.get();cin.get();switchModoAdministrativo();//llama al toString de la universidad
         break;
-    case '2': uni->cambiarNumero();
+    case '2': uni->cambiarNumero();cin.get();switchModoAdministrativo();
         break;
-    case '3': uni->cambiarDireccion();
+    case '3': uni->cambiarDireccion();cin.get();switchModoAdministrativo();
         break;
-    case '4':switchModoEscuela();
+    case '4':this->switchModoEscuela();
         break;
-    case '5':opcionInicio();
+    case '5':switchInicio();
         break;
    default:cout<<"no"<<endl;
     }
@@ -89,16 +95,15 @@ void Menu::switchModoEscuela(){
   aux= modoEscuela();
    
     switch(aux){
-    case '1': cout<<uni->imprimirTodasEscuelas()<<endl; cin.get(); switchInicio();//llama al toString de Escuela*/ 
+    case '1': cout<<uni->imprimirTodasEscuelas()<<endl; cin.get(); cin.get(); switchModoEscuela();//llama al toString de Escuela*/ 
         break;
-    case '2': uni->registrarEscuela();switchInicio();
+    case '2': uni->registrarEscuela();switchModoEscuela();
         break;
-    case '3': uni->cambiarDireccion();
+    case '3':uni->cosultarEscuela();cin.get();cin.get();switchModoEscuela();//CONSULTAR 
         break;
-    case '4':switchInicio();
+    case '4':switchModoAdministrativo();//CONSULTAR 
         break;
-        
-   default:cout<<"no"<<endl;
+   default:cout<<"No entendi!"<<endl;
     }
     cin.get();
 }

@@ -11,6 +11,7 @@
 
 #include"Librerias.h"
 #include"Nodo.h"
+#include "Escuela.h"
 
 class Lista {
 public:
@@ -18,7 +19,11 @@ public:
     virtual ~Lista();
     void insertar(Escuela*);
     string toString();
+    bool eliminarEspecifico(string);
     int contador;
+    Escuela* retornaEscuela(string);
+    bool estaEscuela(string);
+    string imprimeCodigosEscuela();
 private:
     Nodo* primero;
     Nodo* actual;

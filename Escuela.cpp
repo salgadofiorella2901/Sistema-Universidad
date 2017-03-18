@@ -58,10 +58,10 @@ Escuela::~Escuela() {
     string Escuela::toString()
     {
         stringstream s;
-        s<< "Nombre " << nombre <<endl
-                <<"Codigo " << codigo << endl
-                <<"Direccion " << direccion <<endl
-                <<"Numero de Telefono " << numeroTelef<< endl;
+        s<< "Nombre " << this->getNombre() <<endl
+                <<"Codigo " << this->getCodigo() << endl
+                <<"Direccion " << this->getDireccion() <<endl
+                <<"Numero de Telefono " << this->getTelef()<< endl;
         
         return s.str();
     }

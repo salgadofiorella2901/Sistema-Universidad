@@ -34,6 +34,7 @@ public:
     void cambiarDireccion();
     string imprimirTodasEscuelas();
     Lista* retornaLista();
+    
 private:
     string nombre;
     string direccion;

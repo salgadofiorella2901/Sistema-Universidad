@@ -47,7 +47,7 @@ Nodo::~Nodo() {
     string Nodo::toString()
     {
         stringstream s;
-        s<< " Datos de las Escuelas " << dato->toString() << endl;
+        s<< "Datos de las Escuelas " << dato->toString() << endl;
         
         return s.str();
     }

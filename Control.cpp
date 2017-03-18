@@ -30,7 +30,6 @@ Control::~Control() {
 
 void Control::empezar(){
    iniciarlizarListaEscuelas();
-   //cout<<ls->toString()<<endl;
    menu->presentacionInicio();
    menu->switchInicio();
   
@@ -38,8 +37,8 @@ void Control::empezar(){
 
 void Control::iniciarlizarListaEscuelas(){
     Escuela* escuela1 = new Escuela("INFORMATICA","LAGUNILLA","61688613","INF01");
-    Escuela* escuela2 = new Escuela("BIOPRECESOS","HEREDIA","61688613","BIOQUI01");
-    ls->insertar(escuela1);
-    ls->insertar(escuela2);
+    Escuela* escuela2 = new Escuela("BIOPROCESOS","HEREDIA","61688613","BIOQUI01");
+    uni->retornaLista()->insertar(escuela1);
+    uni->retornaLista()->insertar(escuela2);
     
 }

@@ -23,6 +23,8 @@ public:
     void menuPrincipal();
     void menuUniversidad();
     void gotoxy(int, int);
+    void presentacion();
+    void salirSeguro();
     /////////////////////////////////
     void menuEscuela();
     

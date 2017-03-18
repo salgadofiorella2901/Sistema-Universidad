@@ -25,9 +25,9 @@ Universidad::~Universidad() {
 }
 
 
-Universidad::Universidad(string nomb,string direcc,string telef, Lista* ls)
+Universidad::Universidad(string nomb ,string direcc,string telef, Lista* ls)
 {
-    this->nombre = nomb;
+    this->nombre = nomb ;
     this->direccion = direcc;
     this->telefono = telef;
     lista=ls;
@@ -99,7 +99,14 @@ void Universidad::registrarEscuela(){
 }
 
 void Universidad::cosultarEscuela(){
-    
+   
+    cout<<lista->imprimeCodigosEscuela()<<endl;
+    string aux = "";
+    cout<<"INGRESAR CODIGO"<<endl;
+    cin>>aux;
+    if(lista->estaEscuela(aux)){cout<<lista->retornaEscuela(aux)->toString()<<endl;}
+    else{cout<<"NO EXISTE ESCUELA";}
+      
 }
 
 string Universidad::imprimirTodasEscuelas(){
