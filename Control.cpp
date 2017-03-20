@@ -16,7 +16,7 @@
 
 Control::Control() {
     ls = new Lista();
-    uni=new Universidad("UNA","hEREDIA","61688613",ls);
+    uni=new Universidad("UNA","HEREDIA","61688613",ls);
     menu = new Menu(uni);
    
 }

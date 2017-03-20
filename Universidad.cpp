@@ -19,6 +19,7 @@ Universidad::Universidad() {
     direccion = " ";
     telefono = " ";
     lista=new Lista();
+    intfz=new InterfazControl();
 }
 
 Universidad::~Universidad() {
@@ -65,7 +66,6 @@ void Universidad::actualizar()
 {
     string direc = " ";
     string telef = " ";
-
     cout<< "Ingrese la nueva direccion " <<endl;
     cin>> direc;
     setDireccion(direc);
@@ -78,22 +78,27 @@ void Universidad::cambiarNumero(){
     string aux="";
     cout<<"Digite nuevo numero"<<endl;
     cin>>aux;
-    setTelefono(aux);
+    if (intfz->esNumero(aux)){
+        setTelefono(aux);
+    }else{
+    cout<<"DATOS INCORRECTOS"<<endl;cin.get();
+    this->cambiarNumero();}
 }
 
 void Universidad::cambiarDireccion(){
     string aux="";
     cout<<"Digite nueva direccion"<<endl;
-    cin>>aux;
+    cin.ignore(256,'\n');getline(cin,aux, '\n');cin.ignore(256,'\n');
     setDireccion(aux);
 }
 
 void Universidad::registrarEscuela(){
-    string nom,dir,tel,cod = "";
-    cout<<"Ingrese nombre de la escuela"<<endl; cin>>nom;
-    cout<<"Ingrese direccion de la escuela"<<endl;cin>>dir;
-    cout<<"Ingrese telefono de la escuela"<<endl;cin>>tel;
-    cout<<"Ingrese codigo de la escuela"<<endl;cin>>cod;
+    string nom,dir,tel,cod = " ";
+    cin.ignore(256,'\n');
+    cout<<"Ingrese nombre de la escuela"<<endl;getline(cin,nom, '\n');cin.ignore(256,'\n'); //cin>>nom;
+    cout<<"Ingrese direccion de la escuela"<<endl;getline(cin,dir, '\n');cin.ignore(256,'\n');
+    cout<<"Ingrese telefono de la escuela"<<endl;getline(cin,tel, '\n');cin.ignore(256,'\n');//cin>>tel;
+    cout<<"Ingrese codigo de la escuela"<<endl;getline(cin,cod, '\n');cin.ignore(256,'\n');//cin>>cod;
     Escuela* aux = new Escuela(nom, dir, tel, cod);
     lista->insertar(aux);
 }

@@ -49,7 +49,6 @@ string Lista::toString()
     stringstream s;
     system("cmd /c cls");
     s << "Lista de Escuelas " << endl;
-
    s<<" _____  _____  _____  _____  _____  _____  _____  _____  _____  _____ "<<endl
    <<"(_____)(_____)(_____)(_____)(_____)(_____)(_____)(_____)(_____)(_____)"<<endl<<endl;
    

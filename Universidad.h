@@ -15,6 +15,7 @@
 #define UNIVERSIDAD_H
 #include "Librerias.h"
 #include "Lista.h"
+#include "InterfazControl.h"
 
 class Universidad {
 public:
@@ -40,6 +41,7 @@ private:
     string direccion;
     string telefono;
     Lista * lista;
+    InterfazControl* intfz;
 };
 
 #endif /* UNIVERSIDAD_H */

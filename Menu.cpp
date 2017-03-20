@@ -58,7 +58,7 @@ void Menu::switchInicio(){
         default:cout<<"no"<<endl;
         }
     }else{
-            cout<<"DATOS INCORRECTOS"<<endl;
+            cout<<"DATOS INCORRECTOS"<<endl;cin.get();cin.get();
     }
     this->switchInicio();
 }
@@ -66,21 +66,25 @@ void Menu::switchInicio(){
 void Menu::switchModoAdministrativo(){
   char aux = ' ';
   aux= modoAdministrativo();
-   
-    switch(aux){
-    case '1': cout<<uni->toString()<<endl; cin.get();cin.get();switchModoAdministrativo();//llama al toString de la universidad
-        break;
-    case '2': uni->cambiarNumero();cin.get();switchModoAdministrativo();
-        break;
-    case '3': uni->cambiarDireccion();cin.get();switchModoAdministrativo();
-        break;
-    case '4':this->switchModoEscuela();
-        break;
-    case '5':switchInicio();
-        break;
-   default:cout<<"no"<<endl;
-    }
-    cin.get();
+   if (isdigit(aux)!=0){
+        switch(aux){
+        case '1': cout<<uni->toString()<<endl; cin.get();cin.get();switchModoAdministrativo();//llama al toString de la universidad
+            break;
+        case '2': uni->cambiarNumero();cin.get();switchModoAdministrativo();
+            break;
+        case '3': uni->cambiarDireccion();cin.get();switchModoAdministrativo();
+            break;
+        case '4':this->switchModoEscuela();
+            break;
+        case '5':switchInicio();
+            break;
+       default:cout<<"no"<<endl;
+        }
+   }
+   else{
+     cout<<"DATOS INCORRECTOS"<<endl;cin.get();cin.get();
+   }
+  this->switchModoAdministrativo();
 }
 char Menu::modoEscuela(){
     system("cmd /c cls"); 
@@ -93,19 +97,23 @@ char Menu::modoEscuela(){
 void Menu::switchModoEscuela(){
   char aux = ' ';
   aux= modoEscuela();
-   
-    switch(aux){
-    case '1': cout<<uni->imprimirTodasEscuelas()<<endl; cin.get(); cin.get(); switchModoEscuela();//llama al toString de Escuela*/ 
-        break;
-    case '2': uni->registrarEscuela();switchModoEscuela();
-        break;
-    case '3':uni->cosultarEscuela();cin.get();cin.get();switchModoEscuela();//CONSULTAR 
-        break;
-    case '4':switchModoAdministrativo();//CONSULTAR 
-        break;
-   default:cout<<"No entendi!"<<endl;
-    }
-    cin.get();
+   if (isdigit(aux)!=0){
+        switch(aux){
+        case '1': cout<<uni->imprimirTodasEscuelas()<<endl; cin.get(); cin.get(); switchModoEscuela();//llama al toString de Escuela*/ 
+            break;
+        case '2': uni->registrarEscuela();switchModoEscuela();
+            break;
+        case '3':uni->cosultarEscuela();cin.get();cin.get();switchModoEscuela();//CONSULTAR 
+            break;
+        case '4':switchModoAdministrativo();//CONSULTAR 
+            break;
+       default:cout<<"No entendi!"<<endl;
+        }
+   }
+   else{
+       cout<<"DATOS INCORRECTOS"<<endl;cin.get();cin.get();
+   }
+  this->switchModoEscuela();
 }
 
 

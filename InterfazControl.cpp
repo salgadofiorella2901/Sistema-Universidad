@@ -79,3 +79,13 @@ void InterfazControl::salirSeguro(){
                         Sleep(1000);
                         exit(0);
 }
+
+bool InterfazControl::esNumero(string str){
+    for (int i = 0; i < str.length(); i++)
+    {
+        if(str[i]<48 || str[i]>57){
+            return false;
+	}
+    }
+    return true;
+}

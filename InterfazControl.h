@@ -25,6 +25,7 @@ public:
     void gotoxy(int, int);
     void presentacion();
     void salirSeguro();
+    bool esNumero(string);
     /////////////////////////////////
     void menuEscuela();
     
